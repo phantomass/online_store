@@ -9,7 +9,10 @@ group :development do
   gem 'sqlite3', '1.3.10'
 end
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+#gem 'sass-rails', '~> 4.0.0'
+#gem 'bootstrap-sass', '2.3.2.0'
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'sass-rails', '>= 3.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.7.1'

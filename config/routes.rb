@@ -3,14 +3,17 @@ OnlineStore::Application.routes.draw do
 
   resources :carts
 
-  get "store/index"
+  root 'store#index'
+  match '/about',   to: 'store#about',   via: 'get'
+  match '/services',   to: 'store#services',   via: 'get'
+  match '/contacts',   to: 'store#contacts',   via: 'get'
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'store#index', as: 'store'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
