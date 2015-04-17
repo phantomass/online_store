@@ -67,7 +67,6 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -101,3 +100,12 @@ footer {
     }
   }
 }
+
+.navbar li {
+  a { font-size: 14px;
+    &:hover, :active {
+      background-color: #000 !important;
+    }
+  }
+}
+
