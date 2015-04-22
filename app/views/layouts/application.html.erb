@@ -11,8 +11,24 @@
   <![endif]-->
 </head>
 <body>
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="hidden-xs" id="logo">
+        <%= link_to root_path do %>
+          <%= image_tag("http://proektofis.ru/images/logo.png", alt: "") %>
+        <% end %>
+      </div>
+      <div class="hidden-xs" id="telephone">
+        <span class="glyphicon glyphicon-earphone tel" aria-hidden="true"> 8(8552)59-73-40</span><br>
+        <p class="color-p">пн-пт: С 9:00 до 19:00<br>сб: С 10:00 до 17:00</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -22,7 +38,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "Интерьер-офис", root_path, id: "logo", class: "navbar-brand"%>
+        <a class="navbar-brand visible-xs" href="/">Интерьер-Офис</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
@@ -37,8 +53,7 @@
         <!-- End Shopping Cart List -->
       </div>
     </div>
-  </div>
-</header>
+</div>
 
 <div class="container">
   <%= yield %>

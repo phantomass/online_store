@@ -1,1 +1,40 @@
-<h1>contacts</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <p class="lead">Товары по категориям</p>
+      <div class="list-group">
+        <%= link_to "Category 1", "#", class: "list-group-item" %>
+        <%= link_to "Category 2", "#", class: "list-group-item" %>
+        <%= link_to "Category 3", "#", class: "list-group-item" %>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <p class="lead">Контактная информация:</p>
+      <h3>Телефон: 8(8552)59-73-40</h3>
+      <h5>Время работы:<br>пн - пт с 9.00 до 20.00<br>суббота с 10.00 до 18.00</h5>
+      <div class="contacts">
+          <div class="col-lg-4">
+            <%= image_tag("alena.jpg", alt: "Generic placeholder image", class: "img-circle", width: '140', height: '140') %>
+            <h2>Алёна Чуйкина</h2>
+            <h4>Директор</h4>
+            <h4>8(8552)35-86-86</h4>
+            <h4>ICQ: 645429414</h4>
+            <h4>Skype: alenushka8812</h4>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <%= image_tag("artur.jpg", alt: "Generic placeholder image", class: "img-circle", width: '140', height: '140') %>
+            <h2>Артур Шмаков</h2>
+            <h4>Руководитель отдела продаж</h4>
+            <h4>8-987-418-03-69</h4>
+            <h4>ICQ: 412536424</h4>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <%= image_tag("anna.jpg", alt: "Generic placeholder image", class: "img-circle", width: '140', height: '140') %>
+            <h2>Анна Тимофеева</h2>
+            <h4>Менеджер по работе с клиентами</h4>
+            <h4>8(8552)59-73-40</h4>
+          </div><!-- /.col-lg-4 -->
+      </div>
+    </div>
+  </div>
+</div>

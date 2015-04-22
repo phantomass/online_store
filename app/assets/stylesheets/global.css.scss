@@ -1,0 +1,184 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+/* возможно уберем ---------------------------------------------------------- begin*/
+.caption {
+  height: 130px;
+  overflow: hidden;
+}
+
+.caption h4 {
+  white-space: nowrap;
+}
+/* возможно уберем ---------------------------------------------------------- end*/
+
+.thumbnail img {
+  width: 100%;
+}
+
+/* возможно уберем ---------------------------------------------------------- begin*/
+.ratings {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #d17581;
+}
+/* возможно уберем ---------------------------------------------------------- end*/
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333;
+}
+
+.col-md-3 .list-group-item.active, .col-md-3 .list-group-item.active:hover, .col-md-3 .list-group-item.active:focus{
+  background-image: linear-gradient(to bottom, #353535 0%, #5E5E5E 100%);
+  text-shadow: 0 -1px 0 #353535;
+  background-image: -webkit-linear-gradient(top, #353535 0%, #5E5E5E 100%);
+  background-image: -o-linear-gradient(top, #353535 0%, #5E5E5E 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#353535), to(#5E5E5E));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff353535', endColorstr='#ff2b669a', GradientType=0);
+  border-color: #5E5E5E;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* slide ---------------------------------------------------------- begin*/
+.slide-image {
+  width: 100%;
+}
+
+.carousel-holder {
+  margin-bottom: 30px;
+}
+
+.carousel-control, .item {
+  border-radius: 4px;
+}
+/* slide ---------------------------------------------------------- end*/
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color: $gray-light;
+}
+
+.color-p {
+  font-size: 0.9em;
+  color: $gray-light;
+  line-height: normal;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+p.lead {
+  color: #428bca;
+  border-bottom: 3px solid #eee;
+}
+
+
+/* header */
+#logo {
+  float: left;
+}
+
+#telephone {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.tel {
+  font-size: 19px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color:  $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+.navbar {
+  border-radius: 0px ;
+    li {
+      a { font-size: 14px;
+        &:hover {
+          background-color: #428bca !important;
+        }
+      }
+  }
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+  text-shadow: none;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a {
+  background-image: none;
+  background-color: #428bca !important;
+  box-shadow: none;
+}
+
+.col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contacts {
+  margin-top: 40px;
+}
