@@ -43,6 +43,10 @@ html {
   color: #333;
 }
 
+.thumbnail:hover, .thumbnail.active{
+  border:1px solid #777;
+}
+
 .col-md-3 .list-group-item.active, .col-md-3 .list-group-item.active:hover, .col-md-3 .list-group-item.active:focus{
   background-image: linear-gradient(to bottom, #353535 0%, #5E5E5E 100%);
   text-shadow: 0 -1px 0 #353535;
