@@ -29,6 +29,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li class="<%= 'active' if current_page?(:controller => 'products', :action => 'index') %> catal_marg"><%= link_to "Весь каталог", controller: "products", action: "index" %></li>
         <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "О компании", about_path %></li>
         <li class="<%= 'active' if current_page?(services_path) %>"><%= link_to "Услуги",     services_path %></li>
         <li class="<%= 'active' if current_page?(contacts_path) %>"><%= link_to "Контакты", contacts_path %></li>

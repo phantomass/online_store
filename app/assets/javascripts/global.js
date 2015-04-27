@@ -5,3 +5,9 @@
         });
     });
 }(window.jQuery);
+
+$(function() {
+    $('.caption').dotdotdot({
+        after: 'a.readmore'
+    });
+});

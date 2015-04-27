@@ -11,10 +11,16 @@ html {
   overflow-y: scroll;
 }
 
+body {
+  border-radius: 0px !important;
+}
+
 /* возможно уберем ---------------------------------------------------------- begin*/
 .caption {
-  height: 130px;
+  height: 110px;
   overflow: hidden;
+  background: #fbfbfb;
+  border-top: 1px solid #ddd;
 }
 
 .caption h4 {
@@ -107,7 +113,7 @@ h1 {
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 0.9em;
   line-height: 1.7em;
 }
 
@@ -129,6 +135,10 @@ p.lead {
 
 .tel {
   font-size: 19px;
+}
+
+.catal_marg {
+  margin-right: 34px;
 }
 
 /* footer */
@@ -185,4 +195,33 @@ footer {
 
 .contacts {
   margin-top: 40px;
+}
+
+/* image_thumb_container */
+
+.image_thumb_container {
+  height: 200px;
+}
+
+.image_thumb_container > img {
+  width: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 200px;
+}
+
+.col-xs-4 {
+  min-width: 250px;
+}
+
+.text_left {
+  text-align: left;
+}
+
+
+a.readmore {
+
 }
