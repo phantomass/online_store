@@ -1,27 +1,43 @@
 <% if notice %>
     <p id="notice"><%= notice %></p>
 <% end %>
-<h2>Your Pragmatic Cart</h2>
-<ul>
-  <% @cart.line_items.each do |item| %>
-    <li><%= item.quantity %> &times; <%= item.product.title %></li>
-  <% end %>
-</ul>
 
-<%= button_to 'Empty cart', @cart, method: :delete,
-  data: { confirm: 'Are you sure?' } %>
+<div class="col-md-9">
+  <p class="lead">Ваша корзина</p>
+  <div class="row">
 
-<h2>Your Cart</h2>
-<table>
-  <% @cart.line_items.each do |item| %>
-      <tr>
-        <td><%= item.quantity %>&times;</td>
-        <td><%= item.product.title %></td>
-        <td class="item_price"><%= number_to_currency(item.total_price) %></td>
-      </tr>
-  <% end %>
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-  </tr>
-</table>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Изображение</th>
+          <th>Название</th>
+          <th>Описание</th>
+          <th>Количество</th>
+          <th>Цена</th>
+        </tr>
+      </thead>
+        <tbody>
+          <% @cart.line_items.each do |item| %>
+            <tr>
+              <td><img src="<%= item.product.image_url %>" alt=""></td>
+              <td><%= item.product.title %></td>
+              <td><%= item.product.description %></td>
+              <td><%= item.quantity %></td>
+              <td><%= item.total_price %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td colspan="3">Сумма</td>
+            <td><%= @cart.line_items.sum(:quantity) %></td>
+            <td><%= number_to_currency(@cart.total_price) %></td>
+          </tr>
+        </tbody>
+    </table>
+    <div class="container-btn-cart">
+      <%= button_to 'Оформить заказ', @cart, method: :delete, data: { confirm: 'Очистить корзину?' },
+                    class: 'btn btn-success' %>
+      <%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Очистить корзину?' },
+                    class: 'btn btn-warning' %>
+    </div>
+  </div>
+</div>

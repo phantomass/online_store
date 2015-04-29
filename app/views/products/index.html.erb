@@ -2,23 +2,27 @@
   <p class="lead">Все товары</p>
 
   <div class="row">
-    <% @products.each do |product| %>
-        <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
-          <div class="thumbnail">
-            <div class="image_thumb_container">
-              <img src="<%= product.image_url %>" alt="">
+    <% cache ['store', Product.latest] do %>
+      <% @products.each do |product| %>
+        <% cache ['entry', product] do %>
+          <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <div class="image_thumb_container">
+                <img src="<%= product.image_url %>" alt="">
+              </div>
+              <div class="caption">
+                <h4 class="pull-right">$<%= product.price %></h4>
+                <h4 class="text_left"><a href="#"><%= product.title %></a></h4>
+                <%= product.description %>
+                <a href="#" class="readmore" style="display: inline;">Узнать больше »</a>
+              </div>
+              <p></p>
+                <%= button_to 'Добавить в корзину', line_items_path(product_id: product), class: "btn btn-success" %>
+              <p></p>
             </div>
-            <div class="caption">
-              <h4 class="pull-right">$<%= product.price %></h4>
-              <h4 class="text_left"><a href="#"><%= product.title %></a></h4>
-              <%= product.description %>
-              <a href="#" class="readmore" style="display: inline;">Узнать больше »</a>
-            </div>
-            <p></p>
-            <a class="btn btn-primary btn-sm" target="_blank" href="#">Добавить в корзину</a>
-            <p></p>
           </div>
-        </div>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>

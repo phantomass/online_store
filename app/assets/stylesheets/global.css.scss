@@ -221,7 +221,16 @@ footer {
   text-align: left;
 }
 
+a.readmore {}
 
-a.readmore {
+/* cart */
 
+td > img {
+  width: 90%;
+}
+
+
+.container-btn-cart .btn {
+  margin: 10px 10px;
+  float: right;
 }

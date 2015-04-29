@@ -29,14 +29,14 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="<%= 'active' if current_page?(:controller => 'products', :action => 'index') %> catal_marg"><%= link_to "Весь каталог", controller: "products", action: "index" %></li>
+        <li class="<%= 'active' if current_page?(:controller => 'products', :action => 'index') %> catal"><%= link_to "Весь каталог", controller: "products", action: "index" %></li>
         <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "О компании", about_path %></li>
         <li class="<%= 'active' if current_page?(services_path) %>"><%= link_to "Услуги",     services_path %></li>
         <li class="<%= 'active' if current_page?(contacts_path) %>"><%= link_to "Контакты", contacts_path %></li>
       </ul>
       <!-- Shopping Cart List -->
       <ul class="nav navbar-nav navbar-right">
-        <li role="presentation"><a href="#">Ваша корзина <span class="badge">42</span></a></li>
+        <li role="presentation"><a href="http://localhost:3000/carts">Ваша корзина <span class="badge"></span></a></li>
       </ul>
       <!-- End Shopping Cart List -->
     </div>
