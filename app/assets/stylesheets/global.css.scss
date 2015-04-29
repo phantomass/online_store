@@ -230,7 +230,20 @@ td > img {
 }
 
 
-.container-btn-cart .btn {
+.container-btn-cart > form > div > .btn {
   margin: 10px 10px;
   float: right;
+}
+
+td > .badge > a {
+  color: #C5C5C5;
+}
+
+td > .badge > a:hover {
+  color: #808080;
+}
+
+td > .badge {
+  color: #5F5F5F;
+  background-color: #EEEEEE;
 }
