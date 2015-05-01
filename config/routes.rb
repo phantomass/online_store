@@ -9,6 +9,11 @@ OnlineStore::Application.routes.draw do
   match '/contacts',   to: 'store#contacts',   via: 'get'
   resources :products
 
+  resources :line_items do
+    put 'decrease', on: :member
+    put 'increase', on: :member
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

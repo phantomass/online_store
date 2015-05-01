@@ -1,0 +1,4 @@
+$('#cart').html("<%= escape_javascript render(@cart) %>");
+$('#cart_sum').html("<%= @cart.line_items.sum(:quantity) %>");
+$('#current_item').css({'background-color':'#A5F1A5'}).animate({'background-color':''}, 1000);
+$('#cart_sum').css({'background-color':'#A5F1A5'}).animate({'background-color':'#777777'}, 1000);
