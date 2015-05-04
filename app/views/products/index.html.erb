@@ -12,9 +12,9 @@
               </div>
               <div class="caption">
                 <h4 class="pull-right">$<%= product.price %></h4>
-                <h4 class="text_left"><a href="#"><%= product.title %></a></h4>
+                <h4 class="text_left"><%= link_to product.title, product %></h4>
                 <%= product.description %>
-                <a href="#" class="readmore" style="display: inline;">Узнать больше »</a>
+                <%= link_to 'Узнать больше »', product, class: "readmore" %>
               </div>
               <p></p>
                 <%= button_to 'Добавить в корзину', line_items_path(product_id: product), class: "btn btn-success" %>
