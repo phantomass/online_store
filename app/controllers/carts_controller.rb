@@ -10,6 +10,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @cart = Cart.find(params[:id])
   end
 
   # GET /carts/new
@@ -57,8 +58,8 @@ class CartsController < ApplicationController
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to :root,
-        :flash => { notice: 'Теперь ваша корзина пуста!'} }
+      format.html { redirect_to :root }
+      flash[:success] = "Теперь ваша корзина пуста!"
       format.json { head :no_content }
     end
   end

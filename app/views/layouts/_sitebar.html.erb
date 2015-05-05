@@ -5,4 +5,7 @@
     <%= link_to "Офисные Перегородки", "#", class: "list-group-item" %>
     <%= link_to "Сейфы", "#", class: "list-group-item" %>
   </div>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><b><%= value %></b></div>
+  <% end %>
 </div>

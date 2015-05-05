@@ -36,7 +36,13 @@
       </ul>
       <!-- Shopping Cart List -->
       <ul class="nav navbar-nav navbar-right">
-        <li role="presentation"><a href="http://localhost:3000/carts">Ваша корзина <span class="badge" id="cart_sum"><%= @cart.line_items.sum(:quantity) %></span></a></li>
+        <li role="presentation">
+          <%= link_to(cart_path(@cart)) do %>
+            Ваша корзина <span class="badge" id="cart_sum">
+          <%= @cart.line_items.sum(:quantity) %>
+          </span>
+          <% end %>
+        </li>
       </ul>
       <!-- End Shopping Cart List -->
     </div>

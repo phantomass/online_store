@@ -33,7 +33,9 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to @line_item.cart }
-        format.json { render action: 'show', status: :created, location: @line_item }
+        # format.json { render action: 'show', status: :created, location: @line_item }
+        format.js {}
+        format.json { head :ok }
       else
         format.html { render action: 'new' }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
@@ -89,7 +91,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to store_path, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to @cart, notice: 'Line item was successfully updated.' }
         format.js   { @current_item = @line_item }
         format.json { head :ok }
       else

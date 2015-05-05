@@ -17,7 +17,7 @@
                 <%= link_to 'Узнать больше »', product, class: "readmore" %>
               </div>
               <p></p>
-                <%= button_to 'Добавить в корзину', line_items_path(product_id: product), class: "btn btn-success" %>
+                <%= button_to 'Добавить в корзину', line_items_path(product_id: product), class: "btn btn-success", 'data-toggle' => 'modal', remote: true %>
               <p></p>
             </div>
           </div>
@@ -26,7 +26,31 @@
     <% end %>
   </div>
 </div>
+
+<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-success">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h1><i class="glyphicon glyphicon-thumbs-up"></i>  Товар добавлен</h1>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Продолжить покупку</button>
+        <%= link_to 'Перейти в корзину', cart_path(@cart), class: "btn btn-success" %>
+      </div>
+    </div>
+  </div><
+</div>
+
+
+
+
+
+
 <h1>Listing products</h1>
+
 
 <table>
   <thead>

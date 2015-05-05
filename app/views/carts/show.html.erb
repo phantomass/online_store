@@ -9,7 +9,7 @@
     <%= render @cart %>
   </div>
     <div class="container-btn-cart">
-      <%= button_to 'Оформить заказ', @cart, method: :delete, data: { confirm: 'Очистить корзину?' },
+      <%= button_to 'Оформить заказ', new_order_path, method: :get,
                     class: 'btn btn-success' %>
       <%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Очистить корзину?' },
                     class: 'btn btn-warning' %>
