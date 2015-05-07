@@ -1,0 +1,19 @@
+ru:
+  activerecord:
+    errors:
+      messages:
+        blank: "не может быть пустым"
+    attributes:
+      order:
+        name:             "Ваше имя"
+        address:          "Ваш адресс"
+        email:            "E-mail"
+        pay_type:         "Способ оплаты"
+
+
+  orders:
+    form:
+      name:             "Ваше имя"
+      address:          "Ваш адресс"
+      email:            "E-mail"
+      pay_type:         "Способ оплаты"
