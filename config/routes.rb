@@ -1,16 +1,28 @@
 OnlineStore::Application.routes.draw do
+  get 'admin' => 'admin#index'
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+  # get "admin/index"
+  # get "sessions/new"
+  # get "sessions/create"
+  # get "sessions/destroy"
+  resources :users
+
   resources :orders
 
   resources :line_items
 
   resources :carts
-
   root 'store#index'
   match '/about',   to: 'store#about',   via: 'get'
   match '/services',   to: 'store#services',   via: 'get'
   match '/contacts',   to: 'store#contacts',   via: 'get'
-  resources :products
-
+  resources :products do
+    get :who_bought, on: :member
+  end
   resources :line_items do
     put 'decrease', on: :member
     put 'increase', on: :member

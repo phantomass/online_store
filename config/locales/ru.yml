@@ -4,6 +4,10 @@ ru:
       messages:
         blank: "не может быть пустым"
     attributes:
+      user:
+        name:                   "Имя"
+        password:               "Пароль"
+        password_confirmation:  "Подтверждение пароля"
       order:
         name:             "Ваше имя"
         address:          "Ваш адресс"

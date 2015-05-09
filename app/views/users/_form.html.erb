@@ -1,0 +1,33 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        <h4><%= pluralize(@user.errors.count, "ошибка", "ошибки") %></h4>
+      </div>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%=raw msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
+  <div class="container-btn-cart">
+    <div class="actions">
+      <%= f.submit 'Создать пользователя', class: "btn btn-success" %>
+    </div>
+    <%= link_to 'Пользователи', users_path, class: "btn btn-warning" %>
+  </div>
+<% end %>

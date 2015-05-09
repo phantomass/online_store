@@ -29,9 +29,9 @@
     <%= f.select :pay_type, Order::PAYMENT_TYPES, {}, { class: 'form-control' } %>
   </div>
   <div class="container-btn-cart">
-  <div class="actions">
-    <%= f.submit 'Оформить заказ', class: "btn btn-success" %>
-  </div>
-  <%= link_to 'Перейти в корзину', cart_path(@cart), class: "btn btn-warning" %>
+    <div class="actions">
+      <%= f.submit 'Оформить заказ', class: "btn btn-success" %>
+    </div>
+    <%= link_to 'Перейти в корзину', cart_path(@cart), class: "btn btn-warning" %>
   </div>
 <% end %>
