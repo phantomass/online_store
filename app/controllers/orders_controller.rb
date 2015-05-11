@@ -55,7 +55,8 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order }
+        flash[:success] = "Заказ обновлен!"
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,6 +71,7 @@ class OrdersController < ApplicationController
     @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url }
+      flash[:success] = "Заказ удален"
       format.json { head :no_content }
     end
   end

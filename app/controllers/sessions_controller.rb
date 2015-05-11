@@ -4,6 +4,19 @@ class SessionsController < ApplicationController
   skip_before_action :authorize
 
   def new
+    @secur1 = {"qwerty"=>nil, "action"=>"new", "controller"=>"sessions"}
+    @secur = params
+    if @secur == @secur1
+      if session[:user_id]
+        redirect_to admin_url
+      end
+    else
+      respond_to do |format|
+        format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+        format.xml  { head :not_found }
+        format.any  { head :not_found }
+      end
+    end
   end
 
   def create
@@ -18,6 +31,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to store_url, notice: "Сеанс работы завершен"
+    redirect_to root_url, notice: "Сеанс работы завершен"
   end
 end

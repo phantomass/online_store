@@ -46,34 +46,83 @@
   } -->
 
   <style>
+      body{
+          background-color: #E6E6E6;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 10pt;
+          padding-top: 50px;
+          text-align: left;
+      }
+      a {
+          color: #666;
+          text-decoration: none;
+      }
+      a:hover {
+          text-decoration: underline;
+      }
+      .container {
+          margin: auto;
+          max-width: 540px;
+          min-width: 200px;
+      }
+      .box hr {
+          diplay: block;
+          border: none;
+          border-bottom: 1px dashed #ccc;
+      }
+      .box {
+          background-color: #fbfbfb;
+          border: 1px solid #AAA;
+          border-bottom: 1px solid #888;
+          border-radius: 3px;
+          color: black;
+          box-shadow: 0px 2px 2px #AAA;
+          padding: 20px;
+      }
+      .box h1, .box h2 {
+          display: block;
+          text-align: center;
+      }
+      .box h1 {
+          color: #666;
+          font-weight: normal;
+          font-size: 50px;
+          padding: 0;
+          margin: 0;
+          margin-top: 10px;
+          line-height:50px
+      }
+      .box h2 {
+          color: #666;
+          font-weight: normal;
+          font-size: 1.5em;
+      }
+      .box p {
+          display: block;
+          margin-bottom: 10px;
+      }
+      .box ul li {
+          margin-bottom: 7px;
+      }
 
-  body { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMC8yOS8xMiKqq3kAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABHklEQVRIib2Vyw6EIAxFW5idr///Qx9sfG3pLEyJ3tAwi5EmBqRo7vHawiEEERHS6x7MTMxMVv6+z3tPMUYSkfTM/R0fEaG2bbMv+Gc4nZzn+dN4HAcREa3r+hi3bcuu68jLskhVIlW073tWaYlQ9+F9IpqmSfq+fwskhdO/AwmUTJXrOuaRQNeRkOd5lq7rXmS5InmERKoER/QMvUAPlZDHcZRhGN4CSeGY+aHMqgcks5RrHv/eeh455x5KrMq2yHQdibDO6ncG/KZWL7M8xDyS1/MIO0NJqdULLS81X6/X6aR0nqBSJcPeZnlZrzN477NKURn2Nus8sjzmEII0TfMiyxUuxphVWjpJkbx0btUnshRihVv70Bv8ItXq6Asoi/ZiCbU6YgAAAABJRU5ErkJggg==);}
-  .error-template { padding: 40px 15px;text-align: center;}
-  .error-actions { margin-top:15px;margin-bottom:15px;}
-  .error-actions .btn { margin-right:10px; }
-
+      /**** Copyright Information ****/
+      .copyright {
+          display: block;
+          text-align: center;
+          color: #999;
+          font-weight: normal;
+          margin-top: 20px;
+      }
 
   </style>
 </head>
 
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="error-template">
-                <h1>Oops!</h1>
-                <h2>404 Страница не найдена</h2>
-                <div class="error-details">
-
-                </div>
-                <div class="error-actions">
-                    <a href="http://online-store-diplom.herokuapp.com/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
-                        Вернуться на главную страницу </a>
-                </div>
-            </div>
-        </div>
+    <div class="box">
+        <h1>404</h1>
+        <h2>Страница не найдена</h2>
     </div>
 </div>
-
 </body>
 </html>

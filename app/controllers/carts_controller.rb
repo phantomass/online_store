@@ -30,7 +30,8 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { redirect_to @cart }
+        flash[:success] = "Корзина создана!"
         format.json { render action: 'show', status: :created, location: @cart }
       else
         format.html { render action: 'new' }
@@ -44,7 +45,8 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html { redirect_to @cart }
+        flash[:success] = "Корзина обновлена!"
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -78,6 +80,6 @@ class CartsController < ApplicationController
 
     def invalid_cart
       logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to :root, notice: 'Корзины не существует'
+      redirect_to root_url
     end
 end

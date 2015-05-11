@@ -3,7 +3,7 @@ OnlineStore::Application.routes.draw do
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
-    delete 'logout' => :destroy
+    get 'logout' => :destroy
   end
   # get "admin/index"
   # get "sessions/new"
@@ -17,6 +17,9 @@ OnlineStore::Application.routes.draw do
 
   resources :carts
   root 'store#index'
+  #match '/404' => redirect('/'), via: :all
+  #match '/422' => redirect('/'), via: :all
+  #match '/500' => redirect('/'), via: :all
   match '/about',   to: 'store#about',   via: 'get'
   match '/services',   to: 'store#services',   via: 'get'
   match '/contacts',   to: 'store#contacts',   via: 'get'
