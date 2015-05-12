@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="hidden-xs" id="logo">
-        <%= link_to root_path do %>
+        <%= link_to root_url do %>
             <%= image_tag("http://proektofis.ru/images/logo.png", alt: "") %>
         <% end %>
       </div>
@@ -30,9 +30,27 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(:controller => 'products', :action => 'index') %> catal"><%= link_to "Весь каталог", controller: "products", action: "index" %></li>
-        <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "О компании", about_path %></li>
-        <li class="<%= 'active' if current_page?(services_path) %>"><%= link_to "Услуги",     services_path %></li>
-        <li class="<%= 'active' if current_page?(contacts_path) %>"><%= link_to "Контакты", contacts_path %></li>
+        <li class="<%= 'active' if current_page?(about_url) %>"><%= link_to "О компании", about_url %></li>
+        <li class="<%= 'active' if current_page?(services_url) %>"><%= link_to "Услуги",     services_url %></li>
+        <li class="<%= 'active' if current_page?(contacts_url) %>"><%= link_to "Контакты", contacts_url %></li>
+        <% if session[:user_id] %>
+          <li>
+            <div class="dropdown dropdown-nav-adm">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                Админ возможности
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li class="<%= 'active' if current_page?(:controller => 'orders', :action => 'index') %>"><%= link_to "Заказы", controller: "orders", action: "index" %></li>
+                <li class="<%= 'active' if current_page?(:controller => 'users', :action => 'index') %>"><%= link_to "Пользователи", controller: "users", action: "index" %></li>
+                <li class="<%= 'active' if current_page?(:controller => 'products', :action => 'table') %>"><%= link_to "Товары", controller: "products", action: "table" %></li>
+                <li class="<%= 'active' if current_page?(:controller => 'admin', :action => 'index') %>"><%= link_to "Админ", controller: "admin", action: "index" %></li>
+                <li role="presentation" class="divider"></li>
+                <li><%= link_to "Выйти", controller: "sessions", action: "destroy", method: :delete %></li>
+              </ul>
+            </div>
+          </li>
+        <% end %>
       </ul>
       <!-- Shopping Cart List -->
       <ul class="nav navbar-nav navbar-right">

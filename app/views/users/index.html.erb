@@ -1,27 +1,28 @@
-<h1>Listing users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+<div class="col-md-9">
+  <p class="lead">Пользователи</p>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Удалить?' } %></td>
+        <th>Имя</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= link_to 'Посмотреть', user %></td>
+          <td><%= link_to 'Изменить', edit_user_path(user) %></td>
+          <td><%= link_to 'Удалить', user, method: :delete, data: { confirm: 'Удалить?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Новый пользователь', new_user_path, class: 'btn btn-success'  %>

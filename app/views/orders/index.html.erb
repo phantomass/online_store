@@ -1,33 +1,28 @@
-<h1>Listing orders</h1>
+<div class="col-md-9">
+  <p class="lead">Заказы</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Pay type</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= order.name %></td>
-        <td><%= order.address %></td>
-        <td><%= order.email %></td>
-        <td><%= order.pay_type %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Имя</th>
+        <th>Адресс</th>
+        <th>Email</th>
+        <th>Способ оплаты</th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.name %></td>
+            <td><%= order.address %></td>
+            <td><%= order.email %></td>
+            <td><%= order.pay_type %></td>
+            <td><%= link_to 'Заказ', order %></td>
+            <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: 'Хотите удалить?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

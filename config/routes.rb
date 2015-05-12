@@ -20,6 +20,7 @@ OnlineStore::Application.routes.draw do
   #match '/404' => redirect('/'), via: :all
   #match '/422' => redirect('/'), via: :all
   #match '/500' => redirect('/'), via: :all
+  get 'products/table', to: 'products#table'
   match '/about',   to: 'store#about',   via: 'get'
   match '/services',   to: 'store#services',   via: 'get'
   match '/contacts',   to: 'store#contacts',   via: 'get'

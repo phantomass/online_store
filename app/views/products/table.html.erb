@@ -1,0 +1,32 @@
+<div class="col-md-9">
+  <p class="lead">Товары</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Изображение</th>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Цена</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><img src="<%= product.image_url %>" alt=""></td>
+          <td><%= product.title %></td>
+          <td><%= product.description %></td>
+          <td><%= product.price %></td>
+          <td><%= link_to 'Товар', product %></td>
+          <td><%= link_to 'Изменить', edit_product_path(product) %></td>
+          <td><%= link_to 'Удалить', product, method: :delete, data: { confirm: 'Удалить?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
+</div>

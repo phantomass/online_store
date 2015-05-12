@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:new, :create]
+  before_action :set_cart
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:new, :create]
 
@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    redirect_to orders_url
   end
 
   # POST /orders

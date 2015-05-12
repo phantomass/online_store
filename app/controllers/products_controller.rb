@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def table
+    @products = Product.all
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
@@ -61,9 +65,15 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url }
-      flash[:success] = "Товар удален!"
-      format.json { head :no_content }
+      if @product.destroyed?
+        format.html { redirect_to products_url }
+        flash[:success] = "Товар удален!"
+        format.json { head :no_content }
+      else
+        format.html { redirect_to products_url }
+        flash[:danger] = "Товар не возможно удалить"
+        format.json { head :no_content }
+      end
     end
   end
 
