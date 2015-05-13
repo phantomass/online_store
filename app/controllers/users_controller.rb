@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   include CurrentCart
   before_action :set_cart
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_user
 
   # GET /users
   # GET /users.json
@@ -74,5 +75,10 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation)
+    end
+
+    def invalid_user
+      logger.error "Attempt to access invalid user #{params[:id]}"
+      redirect_to root_url
     end
 end

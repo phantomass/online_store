@@ -1,27 +1,32 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create, :decrease, :increase]
+  before_action :set_cart
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:create, :decrease, :increase]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_line
 
   # GET /line_items
   # GET /line_items.json
   def index
-    @line_items = LineItem.all
+    #@line_items = LineItem.all
+    redirect_to root_url
   end
 
   # GET /line_items/1
   # GET /line_items/1.json
   def show
+    redirect_to root_url
   end
 
   # GET /line_items/new
   def new
-    @line_item = LineItem.new
+    #@line_item = LineItem.new
+    redirect_to root_url
   end
 
   # GET /line_items/1/edit
   def edit
+    redirect_to root_url
   end
 
   # POST /line_items
@@ -115,5 +120,10 @@ class LineItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
       params.require(:line_item).permit(:product_id)
+    end
+
+    def invalid_line
+      logger.error "Attempt to access invalid line #{params[:id]}"
+      redirect_to root_url
     end
 end

@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_cart
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:new, :create]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_order
 
   # GET /orders
   # GET /orders.json
@@ -86,5 +87,10 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:name, :address, :email, :pay_type)
+    end
+
+    def invalid_order
+      logger.error "Attempt to access invalid order #{params[:id]}"
+      redirect_to root_url
     end
 end

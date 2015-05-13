@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_cart
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:index, :show]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_product
 
   # GET /products
   # GET /products.json
@@ -86,5 +87,10 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)
+    end
+
+    def invalid_product
+      logger.error "Attempt to access invalid product #{params[:id]}"
+      redirect_to root_url
     end
 end
