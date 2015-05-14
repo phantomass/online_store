@@ -14,6 +14,10 @@ html {
 body {
   border-radius: 0px !important;
 }
+
+a:visited {
+  color: transparent;
+}
 /* возможно уберем ---------------------------------------------------------- begin*/
 .caption {
   height: 110px;
