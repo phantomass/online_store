@@ -20,14 +20,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:name])
     @url = login_url + '?qwerty'
-    if user and user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to admin_url
+    if User.count.zero? #*
+      redirect_to new_user_path #*
     else
-      redirect_to @url
-      flash[:danger] = "Неверная комбинация имени и пароля"
+      user = User.find_by(name: params[:name])
+      if user and user.authenticate(params[:password])
+        session[:user_id] = user.id
+        redirect_to admin_url
+      else
+        redirect_to @url
+        flash[:danger] = "Неверная комбинация имени и пароля"
+      end
     end
   end
 

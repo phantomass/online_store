@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   protected
 
     def authorize
+      return if User.count.zero? #*
       unless User.find_by(id: session[:user_id])
         redirect_to root_url
       end

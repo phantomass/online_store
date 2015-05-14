@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
     @product.destroy
     respond_to do |format|
       if @product.destroyed?
-        format.html { redirect_to products_url }
+        format.html { redirect_to products_table_url }
         flash[:success] = "Товар удален!"
         format.json { head :no_content }
       else
