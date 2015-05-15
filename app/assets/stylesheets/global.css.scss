@@ -16,13 +16,13 @@ body {
 }
 
 a:hover, a:focus {
-  color: #23527c;
+  color: #23527c !important;
   text-decoration: underline;
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 a {
-  color: #337ab7;
+  color: #337ab7 !important;
   text-decoration: none;
 }
 
