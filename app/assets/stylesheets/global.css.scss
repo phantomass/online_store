@@ -15,9 +15,16 @@ body {
   border-radius: 0px !important;
 }
 
-a:visited {
-  color: transparent;
+a:hover, a:focus {
+  color: #23527c;
+  text-decoration: underline;
 }
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
 /* возможно уберем ---------------------------------------------------------- begin*/
 .caption {
   height: 110px;
