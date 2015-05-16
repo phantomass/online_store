@@ -21,3 +21,8 @@ ru:
       address:          "Ваш адресс"
       email:            "E-mail"
       pay_type:         "Способ оплаты"
+
+  will_paginate:
+    page_gap: "&hellip;"
+    previous_label: "назад"
+    next_label: "вперед"
