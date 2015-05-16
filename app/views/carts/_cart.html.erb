@@ -29,13 +29,13 @@
         <% end %>
       </span>
     </td>
-    <td><%= item.total_price %></td>
+    <td><%= item.total_price %> Руб.</td>
     </tr>
   <% end %>
   <tr>
     <td colspan="3">Сумма</td>
     <td><%= @cart.line_items.sum(:quantity) %></td>
-    <td><%= number_to_currency(@cart.total_price) %></td>
+    <td><%= @cart.total_price %> Руб.</td>
   </tr>
   </tbody>
 </table>

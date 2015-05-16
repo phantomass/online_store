@@ -11,7 +11,7 @@
                 <img src="<%= product.image_url %>" alt="">
               </div>
               <div class="caption">
-                <h4 class="pull-right">$<%= product.price %></h4>
+                <h4 class="pull-right"><%= product.price %> Руб.</h4>
                 <h4 class="text_left"><%= link_to product.title, product %></h4>
                 <%= product.description %>
                 <%= link_to 'Узнать больше »', product, class: "readmore" %>

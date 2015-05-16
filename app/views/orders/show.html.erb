@@ -18,15 +18,15 @@
       <td>
           <%= item.quantity %>
       </td>
-      <td><%= item.total_price %></td>
+      <td><%= item.total_price %> Руб.</td>
       </tr>
     <% end %>
     <tr>
       <td colspan="3">Сумма</td>
       <td><%= @order.line_items.sum(:quantity) %></td>
-      <td><%= number_to_currency(@order.total_price) %></td>
+      <td><%= @order.total_price %> Руб.</td>
     </tr>
     </tbody>
   </table>
-  <%= link_to 'Back', orders_path, class: 'btn btn-success' %>
+  <%= link_to 'Заказы', orders_path, class: 'btn btn-success' %>
 </div>
