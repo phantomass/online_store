@@ -69,7 +69,7 @@ OnlineStore::Application.configure do
   config.action_mailer.smtp_settings = {
       address:          "smtp.gmail.com",
       port:             587,
-      domain:           "domain.of.sender.net",
+      domain:           'heroku.com',
       authentication:   "plain",
       user_name:        "ilnurgilfanov7@gmail.com",
       password:         "snake2008",
