@@ -8,11 +8,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.paginate(:page => params[:page], :per_page => 9)
+    @products = Product.paginate(:page => params[:page], :per_page => 9).order('price')
   end
 
   def table
-    @products = Product.all
+    @products = Product.paginate(:page => params[:page], :per_page => 5).order('title')
   end
 
   # GET /products/1
