@@ -72,7 +72,7 @@ OnlineStore::Application.configure do
       domain:           'heroku.com',
       authentication:   "plain",
       user_name:        "diplommailer",
-      password:         "qazwsx321",
+      password:         "zaqxsw321",
       enable_starttls_auto: true
   }
 
