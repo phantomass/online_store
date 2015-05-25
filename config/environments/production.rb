@@ -71,7 +71,7 @@ OnlineStore::Application.configure do
       port:             587,
       domain:           'heroku.com',
       authentication:   "plain",
-      user_name:        "diplommailer",
+      user_name:        "diplommailer@gmail.com",
       password:         "zaqxsw321",
       enable_starttls_auto: true
   }

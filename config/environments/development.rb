@@ -21,8 +21,8 @@ OnlineStore::Application.configure do
       port:             587,
       domain:           "domain.of.sender.net",
       authentication:   "plain",
-      user_name:        "ilnurgilfanov7@gmail.com",
-      password:         "snake2008",
+      user_name:        "diplommailer@gmail.com",
+      password:         "zaqxsw321",
       enable_starttls_auto: true
   }
 

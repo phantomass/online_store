@@ -42,9 +42,13 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to root_path }
-        flash[:success] = "Спасибо за ваш заказ!"
-        format.json { render action: 'show', status: :created, location: @order }
+        if @order.pay_type == "PayPal"
+          format.html { redirect_to @order.paypal_url(products_url) }
+        else
+          format.html { redirect_to root_path }
+          flash[:success] = "Спасибо за ваш заказ!"
+          format.json { render action: 'show', status: :created, location: @order }
+        end
       else
         format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
