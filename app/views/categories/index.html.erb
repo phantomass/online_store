@@ -1,0 +1,25 @@
+<div class="col-md-9">
+  <p class="lead">Категории</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= link_to 'Посмотреть', category %></td>
+          <td><%= link_to 'Изменить', edit_category_path(category) %></td>
+          <td><%= link_to 'Удалить', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Новая категория', new_category_path, class: 'btn btn-success'  %>
+</div>

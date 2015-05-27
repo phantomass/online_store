@@ -1,0 +1,50 @@
+<div class="col-md-9">
+  <p class="lead">Все товары</p>
+
+  <div class="row">
+    <% cache ['store', Product.latest] do %>
+      <% @products.each do |product| %>
+        <% cache ['entry', product] do %>
+          <div class="col-xs-4 col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+              <div class="image_thumb_container">
+                <img src="<%= product.image_url %>" alt="">
+              </div>
+              <div class="caption">
+                <h5 class="pull-right"><%= product.price %> Руб.</h5>
+                <h5 class="text_left"><%= link_to product.title, product %></h5>
+                <%= product.description %>
+                <%= link_to 'Узнать больше »', product, class: "readmore" %>
+              </div>
+              <p></p>
+              <%= button_to 'Добавить в корзину', line_items_path(product_id: product), class: "btn btn-success", 'data-toggle' => 'modal', remote: true %>
+              <p></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+    <%= will_paginate @products %>
+  </div>
+
+</div>
+
+<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header modal-header-success">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h1><i class="glyphicon glyphicon-thumbs-up"></i>  Товар добавлен</h1>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Продолжить покупку</button>
+        <%= link_to 'Перейти в корзину', cart_path(@cart), class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>

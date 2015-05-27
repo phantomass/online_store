@@ -44,6 +44,7 @@
                 <li class="<%= 'active' if current_page?(:controller => 'orders', :action => 'index') %>"><%= link_to "Заказы", controller: "orders", action: "index" %></li>
                 <li class="<%= 'active' if current_page?(:controller => 'users', :action => 'index') %>"><%= link_to "Пользователи", controller: "users", action: "index" %></li>
                 <li class="<%= 'active' if current_page?(:controller => 'products', :action => 'table') %>"><%= link_to "Товары", controller: "products", action: "table" %></li>
+                <li class="<%= 'active' if current_page?(:controller => 'categories', :action => 'index') %>"><%= link_to "Категории", controller: "categories", action: "index" %></li>
                 <li class="<%= 'active' if current_page?(:controller => 'admin', :action => 'index') %>"><%= link_to "Админ", controller: "admin", action: "index" %></li>
                 <li role="presentation" class="divider"></li>
                 <li><%= link_to "Выйти", controller: "sessions", action: "destroy", method: :delete %></li>

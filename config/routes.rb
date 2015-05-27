@@ -1,4 +1,6 @@
 OnlineStore::Application.routes.draw do
+  resources :categories
+
   get 'admin' => 'admin#index'
   controller :sessions do
     get 'login' => :new

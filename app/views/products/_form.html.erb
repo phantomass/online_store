@@ -27,6 +27,10 @@
     <%= f.label :price, "Цена" %><br>
     <%= f.text_field :price, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :category, "Категории" %><br>
+    <%= f.select :category, Category.all.map(&:name), {}, class: "form-control" %>
+  </div>
   <div class="container-btn-cart">
     <div class="actions">
       <%= f.submit 'Создать товар', class: "btn btn-success" %>
