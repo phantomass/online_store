@@ -8,6 +8,7 @@
         <th>Название</th>
         <th>Описание</th>
         <th>Цена</th>
+        <th>Категория</th>
         <th></th>
         <th></th>
         <th></th>
@@ -21,6 +22,7 @@
           <td><%= product.title %></td>
           <td><%= product.description %></td>
           <td><%= product.price %> Руб.</td>
+          <td><%= product.category.name %></td>
           <td><%= link_to 'Товар', product %></td>
           <td><%= link_to 'Изменить', edit_product_path(product) %></td>
           <td><%= link_to 'Удалить', product, method: :delete, data: { confirm: 'Удалить?' } %></td>

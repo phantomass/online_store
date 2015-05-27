@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product }
-        flash[:success] = "Товар обновлен!"
+        flash[:success] = "Товар обновлен! {#@category }"
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
