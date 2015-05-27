@@ -1,7 +1,9 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
   include CurrentCart
   before_action :set_cart
+  skip_before_action :authorize, only: [:show]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_category
 
   # GET /categories
   # GET /categories.json
@@ -73,5 +75,10 @@ class CategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
       params.require(:category).permit(:name)
+    end
+
+    def invalid_category
+      logger.error "Attempt to access invalid category #{params[:id]}"
+      redirect_to root_url
     end
 end
