@@ -52,11 +52,12 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     @category = Category.find_by_name(params[:product][:category])
+    @c = @category.id
     @product.category_id = @category.id
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product }
-        flash[:success] = "Товар обновлен! {#@category }"
+        flash[:success] = "Товар обновлен! {#@c}"
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
