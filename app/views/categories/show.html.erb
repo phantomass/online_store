@@ -1,5 +1,5 @@
 <div class="col-md-9">
-  <p class="lead">Все товары</p>
+  <p class="lead"><%= @category.name %></p>
 
   <div class="row">
     <% cache ['store', Product.latest] do %>
