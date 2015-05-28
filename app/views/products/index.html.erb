@@ -9,6 +9,9 @@
             <div class="thumbnail">
               <div class="image_thumb_container">
                 <img src="<%= product.image_url %>" alt="">
+                <% if Time.now.months_ago(1) > product.created_at %>
+                  <span>NEW</span>
+                <% end %>
               </div>
               <div class="caption">
                 <h5 class="pull-right"><%= product.price %> Руб.</h5>
