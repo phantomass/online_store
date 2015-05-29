@@ -15,7 +15,7 @@
     <% else %>
       <tr>
     <% end %>
-    <td><img src="<%= item.product.image_url %>" alt=""></td>
+    <td><%= image_tag item.product.photo.url %></td>
     <td><%= item.product.title %></td>
     <td><%= item.product.description %></td>
     <td>

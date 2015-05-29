@@ -64,6 +64,7 @@ ru:
         image_url:        "Изображение"
         price:            "Цена"
         category_id:      "Категория"
+        photo:            "Изображение"
       category:
         name:             "Название"
 

@@ -4,7 +4,7 @@
 
     <div class="row">
       <div class="col-md-4 image_thumb_container">
-        <img src="<%= @product.image_url %>" alt="">
+        <%= image_tag @product.photo.url %>
       </div>
       <div class="col-md-8">
         <h4><%= @product.title %></h4>

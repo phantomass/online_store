@@ -34,6 +34,11 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    if @cart.line_items.empty?
+      redirect_to root_path
+      flash[:danger] = "Ваша корзина пуста!"
+      return
+    end
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
 
