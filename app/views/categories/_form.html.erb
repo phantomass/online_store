@@ -1,12 +1,13 @@
 <%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
+      <div class="alert alert-danger">
+        <h4><%= pluralize(@category.errors.count, "ошибка", "ошибки") %></h4>
+      </div>
       <ul>
-      <% @category.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @category.errors.full_messages.each do |msg| %>
+          <li><%=raw msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
