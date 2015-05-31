@@ -90,11 +90,8 @@ OnlineStore::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.paperclip_defaults = {
-      :storage => :s3,
       :s3_credentials => {
-          :bucket => 'gilf-ilnur.tk',
-          :access_key_id => 'AKIAJTLGOIRPJ4C6UFAQ',
-          :secret_access_key => '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'
+          :bucket => 'prodakshnstore'
       }
   }
 end

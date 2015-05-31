@@ -48,7 +48,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem "paperclip", "4.2.1"
-gem 'aws-sdk', "2.0.47"
+gem 'aws-sdk', '< 2.0'
 # Use unicorn as the app server
 # gem 'unicorn'
 
