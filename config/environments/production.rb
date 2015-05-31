@@ -92,9 +92,9 @@ OnlineStore::Application.configure do
   config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {
-          :bucket => ENV['gilf-ilnur.tk'],
-          :access_key_id => ENV['AKIAJTLGOIRPJ4C6UFAQ'],
-          :secret_access_key => ENV['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']
+          :bucket => 'gilf-ilnur.tk',
+          :access_key_id => 'AKIAJTLGOIRPJ4C6UFAQ',
+          :secret_access_key => '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'
       }
   }
 end
